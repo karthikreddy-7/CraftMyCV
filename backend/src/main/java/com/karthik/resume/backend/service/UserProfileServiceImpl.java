@@ -22,7 +22,7 @@ public class UserProfileServiceImpl implements UserProfileService{
     }
 
     @Override
-    public Optional<UserProfile> getProfileByEmail(String email) {
+    public Optional<UserProfile> getUserProfileByEmail(String email) {
         return userProfileRepository.findByEmail(email);
     }
 }
