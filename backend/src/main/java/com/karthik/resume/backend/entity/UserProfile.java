@@ -43,6 +43,9 @@ public class UserProfile {
     @Column(columnDefinition = "TEXT")
     private String skills;
 
+    @Column(columnDefinition = "TEXT")
+    private String githubProfileUrl;
+
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;
