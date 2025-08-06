@@ -1,9 +1,9 @@
-package com.karthik.resume.backend.service;
+package com.karthik.resume.backend.service.impl;
 
 import com.karthik.resume.backend.entity.UserProfile;
 import com.karthik.resume.backend.repository.UserProfileRepository;
+import com.karthik.resume.backend.service.interfaces.UserProfileService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserProfileServiceImpl implements UserProfileService{
+public class UserProfileServiceImpl implements UserProfileService {
     private final UserProfileRepository userProfileRepository;
 
     @Override

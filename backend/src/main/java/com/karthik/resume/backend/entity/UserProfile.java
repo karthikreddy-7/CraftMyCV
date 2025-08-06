@@ -35,16 +35,31 @@ public class UserProfile {
     private String headline;
 
     @Column(columnDefinition = "TEXT")
-    private String experience;
+    private String experience; // JSON string
 
     @Column(columnDefinition = "TEXT")
-    private String education;
+    private String education; // JSON string
 
     @Column(columnDefinition = "TEXT")
-    private String skills;
+    private String skills; // JSON string of array
 
     @Column(columnDefinition = "TEXT")
     private String githubProfileUrl;
+
+    @Column(columnDefinition = "TEXT")
+    private String profileSummary; // Short about me / elevator pitch
+
+    @Column(columnDefinition = "TEXT")
+    private String languages; // JSON string (array)
+
+    @Column(columnDefinition = "TEXT")
+    private String socialLinks; // JSON object {linkedin, GitHub, portfolio, etc.}
+
+    @Column(columnDefinition = "TEXT")
+    private String certifications; // JSON array of cert objects
+
+    @Column(columnDefinition = "TEXT")
+    private String projects; // JSON array of project objects
 
     @CreationTimestamp
     @Column(updatable = false)

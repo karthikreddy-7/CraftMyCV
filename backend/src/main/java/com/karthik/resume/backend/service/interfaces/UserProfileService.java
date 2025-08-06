@@ -1,4 +1,4 @@
-package com.karthik.resume.backend.service;
+package com.karthik.resume.backend.service.interfaces;
 
 import com.karthik.resume.backend.entity.UserProfile;
 

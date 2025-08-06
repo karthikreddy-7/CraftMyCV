@@ -1,13 +1,11 @@
 package com.karthik.resume.backend.controller;
 
 import com.karthik.resume.backend.entity.UserProfile;
-import com.karthik.resume.backend.service.UserProfileService;
+import com.karthik.resume.backend.service.interfaces.UserProfileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Slf4j
 @RestController
