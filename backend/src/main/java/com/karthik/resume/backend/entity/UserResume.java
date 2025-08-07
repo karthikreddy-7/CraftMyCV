@@ -31,6 +31,9 @@ public class UserResume {
     private String title; // e.g. "Frontend Resume", "Meta SDE 2025"
 
     @Column(columnDefinition = "TEXT")
+    private String jobDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String renderedHtml; // Snapshot of rendered Thymeleaf HTML
 
     @Column
