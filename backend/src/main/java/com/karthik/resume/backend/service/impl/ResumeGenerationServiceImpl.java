@@ -1,5 +1,6 @@
 package com.karthik.resume.backend.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.karthik.resume.backend.dto.ResumeGenerationRequestDTO;
 import com.karthik.resume.backend.dto.ResumeGenerationResponseDTO;
 import com.karthik.resume.backend.service.interfaces.ResumeGenerationService;
@@ -19,23 +20,12 @@ public class ResumeGenerationServiceImpl implements ResumeGenerationService {
     private final KafkaMessageProducer kafkaMessageProducer;
 
     @Override
-    public ResumeGenerationResponseDTO generateResume(ResumeGenerationRequestDTO request) {
+    public ResumeGenerationResponseDTO generateResume(ResumeGenerationRequestDTO request) throws JsonProcessingException {
         log.info("Sending request to AI microservice for user: {}", request.getUserId());
         kafkaMessageProducer.sendMessage(
-                "quickstart-events",
-                "Sending request to AI microservice for user: " + request.getUserId()
+                "resume-generation-requests",
+                request
         );
-
-/*
-        ResumeGenerationResponseDTO response = restTemplate.postForObject(
-                pythonServiceUrl,
-                request,
-                ResumeGenerationResponseDTO.class
-        );
- */
-        ResumeGenerationResponseDTO response =new ResumeGenerationResponseDTO();
-
-        log.info("Received AI-generated resume from Python service "+ response.toString());
-        return response;
+        return new ResumeGenerationResponseDTO();
     }
 }

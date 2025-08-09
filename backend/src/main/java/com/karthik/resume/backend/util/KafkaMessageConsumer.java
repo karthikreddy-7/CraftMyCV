@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaMessageConsumer {
-    @KafkaListener(topics = "quickstart-events", groupId = "craftmycv")
+    @KafkaListener(topics = "resume-generation-results", groupId = "craftmycv")
     public void listen(String message) {
         System.out.println("Received message from kafka: " + message);
     }

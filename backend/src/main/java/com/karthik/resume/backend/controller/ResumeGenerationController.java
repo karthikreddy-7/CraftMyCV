@@ -1,6 +1,7 @@
 package com.karthik.resume.backend.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.karthik.resume.backend.dto.ResumeGenerationRequestDTO;
 import com.karthik.resume.backend.dto.ResumeGenerationResponseDTO;
 import com.karthik.resume.backend.service.interfaces.ResumeGenerationService;
@@ -20,7 +21,7 @@ public class ResumeGenerationController {
     private ResumeGenerationService resumeGenerationService;
 
     @PostMapping("/generate-resume")
-    public ResponseEntity<?> generateResume(@RequestBody ResumeGenerationRequestDTO request) {
+    public ResponseEntity<?> generateResume(@RequestBody ResumeGenerationRequestDTO request) throws JsonProcessingException {
         ResumeGenerationResponseDTO response = resumeGenerationService.generateResume(request);
         return ResponseEntity.ok(response);
     }
