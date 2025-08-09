@@ -39,6 +39,9 @@ public class UserResume {
     @Column
     private Boolean isDefault = false;
 
+    @Column
+    private String status;
+
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;

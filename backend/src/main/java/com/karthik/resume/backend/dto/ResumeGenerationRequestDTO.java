@@ -13,4 +13,9 @@ public class ResumeGenerationRequestDTO {
     private String jobDescription;
     private String templateId;
     private ResumeGenerationMetadata metadata;
+    private String title;
+
+    // For Kafka to track which resume
+    private UUID userResumeId;
 }
+
